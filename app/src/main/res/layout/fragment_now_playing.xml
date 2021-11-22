@@ -8,17 +8,20 @@
     android:gravity="center"
     android:background="@drawable/musicplayerbg"
 
-    tools:context=".NowPlayingFragment">
+    tools:context=".NowPlayingFragment"
+    tools:ignore="LabelFor">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="8dp">
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:src="@drawable/coverart"
-        android:padding="40dp"/>
+
+        <ImageView
+            android:id="@+id/cover_art"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:padding="40dp"
+            android:src="@drawable/coverart" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,7 +31,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="song name:"
+            android:text="song name: "
             android:textColor="#FFFFFF"
             android:padding="10dp"/>
         <TextView
@@ -69,20 +72,31 @@
 
 
         <ImageButton
-            android:id="@+id/previous"
+            android:id="@+id/previous_btn"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@drawable/ic_baseline_skip_previous_24"/>
+            android:background="@drawable/ic_baseline_skip_previous_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <ImageButton
-            android:id="@+id/play"
+            android:id="@+id/play_btn"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@drawable/ic_baseline_play_arrow_24"/>
+            android:background="@drawable/ic_baseline_play_arrow_24"
+            tools:ignore="SpeakableTextPresentCheck" />
         <ImageButton
-            android:id="@+id/next"
+            android:id="@+id/pause_btn"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@drawable/ic_baseline_skip_next_24"/>
+            android:background="@drawable/ic_baseline_play_arrow_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/next_btn"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_baseline_skip_next_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </LinearLayout>
@@ -91,21 +105,26 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00:00"
-            android:textColor="@color/white"/>
-        <SeekBar
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
 
         <TextView
+            android:id="@+id/playerPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="00:00"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/playerDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </LinearLayout>
